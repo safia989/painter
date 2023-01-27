@@ -1,0 +1,497 @@
+/* Start Variables */
+:root {
+    --main-color: #10cab7;
+    --secondary-color: #2c4755;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+    --main-duration: 0.5s;
+  }
+  /* End Variables */
+  /* strat global role*/
+  *{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  html{
+    scroll-behavior:smooth;
+  }
+  body{
+      font-family: 'Work Sans', sans-serif;
+  }
+  /* end global role*/
+  /*startr component*/
+  .special-heading {
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+  }
+  .special-heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+  }
+  @media (max-width: 767px) {
+    .special-heading {
+      font-size: 60px;
+    }
+    .special-heading + p {
+      margin-top: -20px;
+    }
+  }
+  /*end component*/
+  
+  .container {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Small */
+    @media (min-width: 768px) {
+      .container {
+        width: 750px;
+      }
+    }
+    /* Medium */
+    @media (min-width: 992px) {
+      .container {
+        width: 1000px;
+      }
+    }
+    /* Large */
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
+      }}
+      /* end global role*/
+      /*start header*/
+      .header{
+        padding: 20px;
+      }
+      .header .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header .logo{
+        width: 100px;
+        font-size: large;
+      }
+      .header .logo span{
+          font-weight: bold;
+      }
+      .header .links{
+        position: relative; 
+      }
+      .header .links:hover .icon span:nth-child(2) {
+        width: 100%;
+      }
+      .header .links .icon{
+        width: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+  
+      }
+      .header .links .icon span {
+        background-color: #333;
+        margin-bottom: 5px;
+        height: 2px;
+      }
+      .header .links .icon span:first-child {
+        width: 100%;
+      }
+      .header .links .icon span:nth-child(2) {
+        width: 60%;
+        transition: 0.3s;
+      }
+      .header .links .icon span:last-child {
+        width: 100%;
+      }
+      .header .links ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #f6f6f6;
+        position: absolute;
+        right: 0;
+        min-width: 200px;
+    top: calc(100% + 15px);
+        display: none;
+        z-index: 1;
+      }
+      .header .links:hover ul{
+        display: block;
+      }
+      .header .links ul::before {
+        content: "";
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #f6f6f6 transparent;
+        position: absolute;
+        right: 5px;
+        top: -20px;
+      }
+      .header .links ul li a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        color: #333;
+        transition: 0.3s;
+      }
+      .header .links ul li a:hover {
+        padding-left: 25px;
+      }
+      .header .links ul li:not(:last-child) a {
+        border-bottom: 1px solid #ddd;
+      }
+      /*end header*/
+      /* Start Landing Section */
+  /* .landing{
+    background-image: url(../images/land.jpg);
+    background-size: cover;
+    /* height: calc(100vh - 64px); */
+ /*    position: relative;
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+  } */ 
+  
+   /* 5555555555555555555555555555555555555555555 */
+   /*  .landing .intro-text img{
+        width: 400px;
+    height: 500px;
+    margin: 20px;
+     
+  }
+  .landing .intro-text h1 {
+   
+  }
+  
+    .landing .intro-text p {
+      
+    } */
+
+    .landing{
+
+        padding-top: var(--section-padding);
+        padding-bottom: var(--section-padding);
+      }
+       .landing .container{ /*هنا جايات القسم بثنيهن فوق بعض وهذا مناسب للشاشات الصغيره*/
+        display: flex; /*علشان يشتغل الفلكس بيسس
+       */
+       justify-content: space-between; /*مسافة العشرة بالمئه الي على الجوانب بتصير في النص
+      */ 
+       flex-wrap: wrap; /* علشان اذا صغرت المسافة ينزل القسم الثاني تحت
+       */
+       }
+      @media (min-width: 992px){ /*اسوي هذا علشان لما تكبر الشاشه يكونن القسمين عدال بعضهن*/
+         .landing .intro-text .TESTIMONIALS { /*هذي الحركه اقصد فيها دايركت يهر (حال القسمين الاور سكلس والتايمس :بدل ما اكتب كل مره وحده)
+       */     flex-basis: 45%; /*  الفلكس بيسس يقسم المساحه وانا هنا قلت كل قسم يله 45% ما 50 لاني بايه 10في المئه تكون سبيس بين القسمين
+       */
+        }
+        .landing .intro-text .skills{ /*هذي الحركه اقصد فيها دايركت يهر (حال القسمين الاور سكلس والتايمس :بدل ما اكتب كل مره وحده)
+            */     flex-basis: 45%; /*  الفلكس بيسس يقسم المساحه وانا هنا قلت كل قسم يله 45% ما 50 لاني بايه 10في المئه تكون سبيس بين القسمين
+            */
+             }
+            
+            }
+    
+
+             .landing .intro-text .skills h3{  /* h3 بثنيهن مال القسمين بدل ما اسمي كلاساتهن مره */
+          margin: 0 0 30px;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: normal;
+          margin-top: -160px;
+        }
+      
+        .landing .intro-text .skills p{
+          text-align: center;
+          margin-bottom: 60px;
+          line-height: 2;
+          color: #777;
+        }
+      
+     /*  .landing .TESTIMONIALS .content{
+        display: flex; /* علشان يجي الكلام عدال الصورة اذا حصل وسع */
+    /*     align-items: center; /* علشا الصورة والكلام يكونن في نفس السطر */
+       /*  margin-bottom: 30px;
+      } *//*  */ 
+      .landing .TESTIMONIALS .content img{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%; /* علشان تصير الصورة دائرية */
+        margin-right: 50px;
+      }
+      @media (max-width:767px){
+        .landing .TESTIMONIALS .content{
+          flex-direction: column; /* علشان الكلام يجي تحت الصورة في الموبايل */
+          text-align: center;
+          
+        }
+        .landing .TESTIMONIALS .content img{
+        margin: 0 auto 20px;
+        margin-right: 20px;
+        } 
+       
+      }
+    /*   .landing .TESTIMONIALS .text{
+        line-height: 1.8;
+        border-bottom: 1px solid #ccc;
+        
+      }
+      
+      .landing .TESTIMONIALS .text p{
+        color: #777;
+        text-align: right;
+        font-size: 14px;
+        margin-bottom: 10px; */
+      /*   border-bottom: 1px solid #ccc; كما ذلا الاشياء يسوين في الاب يعني مع الي فوق واذا نسيانه الفرق جربي استخدميه هنا وشوفي الفرق
+       */
+      /*  .landing .TESTIMONIALS .bullets {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+       }
+       .our-skills .TESTIMONIALS .bullets li{
+        width: 14px;
+        height: 14px;
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      
+      .our-skills .TESTIMONIALS .bullets li.active{
+        background-color: var(--main-color);
+        border-color: var(--main-color);
+      } */
+     
+      /*  end skills*/
+   /* 5555555555555555555555555555555555555555555 */
+    
+      /* end Landing Section */
+     /* start features*/
+    
+   /* end Services  */
+   /*strt  Portfolio */
+  /*  section{
+    margin: 20px auto;
+    padding: 40px;
+    width: 800px;
+    
+  
+  } */
+  section ul{
+    display: flex;
+    margin: 50px;
+    justify-content:space-evenly;
+  }
+  section ul li{
+    list-style: none;
+    padding:8px  20px ;
+    background: #eee;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  section ul li.list{
+    background: #03a9f4;
+    color: #fff;
+  }
+  .Photo{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Photo .itembox{
+    
+    
+  }
+   img{
+    
+   /*position: absolute;
+    top: 0;
+    left: 0;
+    height: 400px;
+    
+    object-fit: cover;
+    background-color: red;
+    position: relative;*/
+    width: 300px;
+    height: 300px;
+    margin: 4px;
+    border-radius: 5px;
+  
+  }
+  
+   .Portfolio{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+   }
+   .portfolio .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 80px;
+  }
+  .portfolio .portfolio-content .card {
+    background-color: white;
+  }
+  .portfolio .portfolio-content .card img {
+    max-width: 100%;
+  }
+  .portfolio .portfolio-content .card .info {
+    padding: 20px;
+  }
+  .portfolio .portfolio-content .card .info h3{
+   margin: 0;
+  }
+  .portfolio .portfolio-content .card .info p{
+      color: #777;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+  
+   /*end  Portfolio */
+   /* Start About */
+  .about {
+    padding-top: var(--section-padding);
+    padding-bottom: calc(var(--section-padding) + 60px);
+  }
+  .about .about-content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @media (max-width: 991px) {
+    .about .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .about .about-content .image {
+    position: relative;
+    width: 250px;
+    height: 375px;
+  }
+  @media (max-width: 991px) {
+    .about .about-content .image {
+      margin: 0 auto 60px;
+    }
+  }
+  .about .about-content .image::before {
+    content: "";
+    position: absolute;
+    background-color: #ebeced;
+    width: 100px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+  }
+  .about .about-content .image::after {
+    top: -40px;
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    z-index: -1;
+    right: -150px;
+  }
+  @media (max-width: 991px) {
+    .about .about-content .image::before,
+    .about .about-content .image::after {
+      display: none;
+    }
+  }
+  .about .about-content .image img {
+    max-width: 100%;
+  }
+ .image-about{
+
+  }
+  .about .about-content .text {
+    flex-basis: calc(100% - 500px);
+  }
+  .about .about-content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+  }
+  .about .about-content .text hr {
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+  }
+  .about .about-content .text p:last-of-type {
+    line-height: 2;
+    color: #777;
+  }
+  /* End About */
+   /*start contact*/
+  .contact{
+   padding-top: var(--section-padding);
+   padding-bottom: var(--section-padding);
+   background-color: var(--section-background);
+  }
+  .contact .info{
+    text-align: center;
+    padding-top: var(--section-padding);
+   padding-bottom: var(--section-padding);
+  }
+  .contact .info .label{
+  font-weight: 800;
+  font-size: 30px;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  letter-spacing: -2px;
+  }
+  .contact .info .link{
+    display: block;
+    font-weight: 800;
+    font-size: 30px;
+    color: var(--secondary-color); 
+    text-decoration: none;
+  }
+  .contact .info .social{
+   display: flex;
+   justify-content: center;
+   font-size: 16px;
+   margin-top: 20px;
+  }
+  .contact .info .social i{
+  margin-left: 10px;
+  color: var(--secondary-color);
+  }
+  @media (max-width:767px){
+    .contact .info .link,.contact .info .label{
+      font-size: 25px;
+    }
+  
+  }
+   /*end contact*/
+   /*start footer*/
+   .footer{
+/*   background-color: var(--secondary-color);
+ */  color: #000;
+  text-align: center;
+  font-size: 16px;
+  padding: 30px 10px;
+   }
+   .footer span{
+   
+     font-weight: bold;
+   }
+   /*end footer*/
+  
